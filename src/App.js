@@ -27,13 +27,30 @@ function App() {
           user: user,
         });
       });
-
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
-          type:"SET_PLAYLISTS",
+          type: "SET_PLAYLISTS",
           playlists: playlists,
+        });
+      });
+      spotify.getPlaylist("1MAeTOYlLixDlaieDh2PBO").then((response) => {
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        });
+      });
+      spotify.getMyCurrentPlayingTrack().then((track) => {
+        dispatch({
+          type:"CURRENTLY_PLAYING_TRACK",
+          current_track: track,
         })
-      })
+      });
+      spotify.getMyRecentlyPlayedTracks().then((tracks) => {
+        dispatch({
+          type:"RECENT_TRACKS",
+          recent_tracks: tracks,
+        })
+      });
     }
   }, []);
 

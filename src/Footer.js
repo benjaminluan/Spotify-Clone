@@ -7,14 +7,16 @@ import PlayCircleOutlinedIcon from "@mui/icons-material/PlayCircleOutlined";
 import { Grid, Slider } from "@mui/material";
 import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
 import VolumeDownIcon from "@mui/icons-material/VolumeDown";
+import { useDataLayerValue } from "./DataLayer";
 const Footer = () => {
+  const [{ current_track }, dispatch] = useDataLayerValue();
   return (
     <div className="footer">
       <div className="footer__left">
-        <img src="" alt="" className="footer__albumLogo" />
+        <img src={current_track?.item.album.images[0].url} alt="" className="footer__albumLogo" />
         <div className="footer__songInfo">
-            <h4>test</h4>
-            <p>test</p>
+          <h4>{current_track?.item.album.name}</h4>
+          <p>{current_track?.item.album.artists.map((artist) => artist.name)}</p>
         </div>
       </div>
       <div className="footer__center">
