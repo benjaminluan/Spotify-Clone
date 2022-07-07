@@ -39,7 +39,6 @@ function App() {
           playlists: playlists,
         });
       });
-      // 1MAeTOYlLixDlaieDh2PBO
       spotify.getPlaylist("").then((response) => {
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
