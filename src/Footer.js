@@ -9,14 +9,14 @@ import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
 import VolumeDownIcon from "@mui/icons-material/VolumeDown";
 import { useDataLayerValue } from "./DataLayer";
 const Footer = () => {
-  const [{ current_track }, dispatch] = useDataLayerValue();
+  const [{ recent_tracks }, dispatch] = useDataLayerValue();
   return (
     <div className="footer">
       <div className="footer__left">
-        <img src={current_track?.item.album.images[0].url} alt="" className="footer__albumLogo" />
+        <img src={recent_tracks?.items[0].track.album.images[0].url} alt="" className="footer__albumLogo" />
         <div className="footer__songInfo">
-          <h4>{current_track?.item.album.name}</h4>
-          <p>{current_track?.item.album.artists.map((artist) => artist.name)}</p>
+          <h4>{recent_tracks?.items[0].track.album.name}</h4>
+          <p>{recent_tracks?.items[0].track.album.artists.map((artist) => artist.name).join(", ")} </p>
         </div>
       </div>
       <div className="footer__center">

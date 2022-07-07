@@ -40,6 +40,11 @@ const reducer = (state, action) => {
         ...state,
         recent_tracks: action.recent_tracks,
       };
+      case "FEATURED":
+        return {
+          ...state,
+          featured: action.featured
+        }
     default:
       return state;
   }

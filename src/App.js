@@ -27,13 +27,20 @@ function App() {
           user: user,
         });
       });
+      spotify.getFeaturedPlaylists().then((playlist) =>{
+        dispatch({
+          type:"FEATURED",
+          featured: playlist,
+        })
+      })
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: "SET_PLAYLISTS",
           playlists: playlists,
         });
       });
-      spotify.getPlaylist("1MAeTOYlLixDlaieDh2PBO").then((response) => {
+      // 1MAeTOYlLixDlaieDh2PBO
+      spotify.getPlaylist("").then((response) => {
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
           discover_weekly: response,

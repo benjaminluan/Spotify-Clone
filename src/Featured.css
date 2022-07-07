@@ -1,0 +1,38 @@
+.featured__playlists {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 32px;
+  margin-top: 40px;
+}
+
+.featured__playlist {
+  width: 20%;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  max-width: 300px;
+  min-width: 300px;
+}
+
+.featured__playlist > img {
+  transition: 150ms transform ease-in;
+  width: 100%;
+  cursor: pointer;
+}
+.featured__playlist > img:hover {
+  transform: scale(1.08);
+  width: 100%;
+}
+
+.featured__playlist > h4 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.featured__playlist > p {
+  color: gray;
+  margin-bottom: 8px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
