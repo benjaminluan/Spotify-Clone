@@ -2,7 +2,7 @@
 when done it'll bring them back */
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
-const redirectUri = "http://localhost:3000/";
+const redirectUri = "https://spotify-clone-lovat-phi.vercel.app/";
 const clientId = "d0f693e3e8234462a499ecbfa4c6a661";
 
 /* These are the rules spotify put down.*/
